@@ -148,7 +148,7 @@ input::placeholder {
     font-family: "copse";
     font-size: 25px;
     text-align: center;
-    width:300px;
+    width: 300px;
 }
 
 #btn {
@@ -441,7 +441,7 @@ span:hover {
     body {
         background-image: url("./assets/phone.jpeg");
         background-repeat: no-repeat;
-        background-size: 100% 100vh; /* Updated property */
+        background-size: 100%  100vh; /* Updated property */
         background-attachment: fixed;
         margin: 0;
         font-family: 'Bayon', sans-serif;
@@ -458,7 +458,7 @@ span:hover {
         font-size: 15px;
     }
 
-    .section1 {
+    #sec {
         font-size: 25px;
         width: 50%;
         margin-top: 50px;
@@ -552,7 +552,27 @@ span:hover {
 
     .modal-content {
         width: 80%;
-        left: 10%;
+        left: 20%;
+            background-color: #ffffff6b;
+            margin: 15% auto;
+            padding: 50px;
+            border: 1px solid #888;
+            width: 500px;
+            border-radius: 30px;
+            background: rgba(238, 166, 166, 0.25);
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+            backdrop-filter: blur(10.5px);
+            -webkit-backdrop-filter: blur(16.5px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            color: rgb(255, 255, 255);
+            position: fixed;
+            left: 7%;
+            top: 10vh;
+            height: 400px;
+            overflow: auto;
+            width: 350px;
+        
     }
     #line{
         width: 300px;

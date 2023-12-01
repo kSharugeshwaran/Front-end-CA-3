@@ -148,6 +148,7 @@ input::placeholder {
     font-family: "copse";
     font-size: 25px;
     text-align: center;
+    width:300px;
 }
 
 #btn {

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <!-- Uncomment the following lines if you want to use a background image -->
+    <!-- <div id="bg1">
+        <img src="./assets/background.jpeg" alt="" width="100%" id="bg1">
+    </div> -->
+
+    <nav>
+        <div class="part1">
+            <p>HOME</p>
+            <p>ABOUT US</p>
+            <p>LOCATION</p>
+            <p>MENU</p>
+        </div>
+        <div class="part2">
+            <p>LOGIN</p>
+            <p>|</p>
+            <p>SIGN UP</p>
+        </div>
+    </nav>
+
+    <section class="section1">
+        <p>" SAVOR THE LOVE IN EVERY DISH, CRAFTED FROM OUR KITCHEN TO YOURS "</p>
+    </section>
+
+    <div class="inputbox">
+        <input type="text" placeholder="search here....." id="category">
+        <a href="#search_results"><img src="./assets/searchicon.png" alt="" id="search_icon"></a>
+    </div>
+
+    <section class="random">
+        <div id="container">
+            <h1>Today's Special</h1>
+            <img src="" alt="" id="kfc">
+            <h3 id="randomName"></h3>
+            <button id="btn" onclick="openModal()">ADD-INS</button>
+            <div id="line"></div>
+        </div>
+    </section>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Ingredients</h2>
+            <ul id="ingredientsList"></ul>
+        </div>
+    </div>
+
+    <div id="line2"><p>Results for the searched category:</p></div>
+    <div id="search_results"></div>
+    
+    <footer>
+        <div class="footer-content">
+            <div class="contact-info">
+                <p>lovely professional university, phagwara, punjab</p>
+                <p>Email: waran@gmail.com</p>
+                <p>Phone: 80903636363</p>
+            </div>
+            <div class="quick-links">
+                <a href="/">Home</a>
+                <a href="/about">About Us</a>
+                <a href="/services">Services</a>
+                <a href="/contact">Contact</a>
+                <a href="/blog">Blog</a>
+            </div>
+            <div class="social-media">
+                <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <div class="newsletter">
+                <p>Subscribe to our Newsletter</p>
+                <form action="#" method="post">
+                    <input type="email" name="email" placeholder="Your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>designed and developed by <span>sharugeshwaran</span></p>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
+

@@ -6,6 +6,8 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8sh+WyZ9QqDDFhAVP1Kq7vFIIahF4E5PDDUmfc" crossorigin="anonymous">
+
 </head>
 <body>
     <!-- Uncomment the following lines if you want to use a background image -->
@@ -15,10 +17,9 @@
 
     <nav>
         <div class="part1">
-            <p>HOME</p>
-            <p>ABOUT US</p>
-            <p>LOCATION</p>
-            <p>MENU</p>
+            <a href="#sec"><p>HOME</p></a>
+            <a href="#footer"><p>ABOUT US</p></a>
+            <a href="#special"><p>RANDOM</p></a>
         </div>
         <div class="part2">
             <p>LOGIN</p>
@@ -27,7 +28,7 @@
         </div>
     </nav>
 
-    <section class="section1">
+    <section class="section1" id="sec">
         <p>" SAVOR THE LOVE IN EVERY DISH, CRAFTED FROM OUR KITCHEN TO YOURS "</p>
     </section>
 
@@ -36,12 +37,12 @@
         <a href="#search_results"><img src="./assets/searchicon.png" alt="" id="search_icon"></a>
     </div>
 
-    <section class="random">
+    <section class="random" id="special">
         <div id="container">
             <h1>Today's Special</h1>
             <img src="" alt="" id="kfc">
             <h3 id="randomName"></h3>
-            <button id="btn" onclick="openModal()">ADD-INS</button>
+            <button id="btn" >ADD-INS</button>
             <div id="line"></div>
         </div>
     </section>
@@ -51,12 +52,13 @@
             <h2>Ingredients</h2>
             <ul id="ingredientsList"></ul>
         </div>
+        <div></div>
     </div>
 
     <div id="line2"><p>Results for the searched category:</p></div>
     <div id="search_results"></div>
     
-    <footer>
+    <footer id="footer">
         <div class="footer-content">
             <div class="contact-info">
                 <p>lovely professional university, phagwara, punjab</p>

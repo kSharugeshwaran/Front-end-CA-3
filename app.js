@@ -1,11 +1,18 @@
-var url = "https://www.themealdb.com/api/json/v1/1/random.php"
+
+var url = "https://www.themealdb.com/api/json/v1/1/random.php";
+var data; // Define data variable outside the functions
+
+
 
 async function fetchRandomMeal() {
     try {
         var response = await axios.get(url);
-        data = response.data.meals[0]; // Assign value to data
+        data = response.data.meals[0];
         console.log(data);
+        var container = document.getElementById("container");
 
+        // Add "show" class to trigger the animation
+        container.classList.add("show");
         var randomImage = document.getElementById("kfc");
         randomImage.src = `${data.strMealThumb}`;
         var randomName = document.getElementById("randomName");
@@ -15,50 +22,56 @@ async function fetchRandomMeal() {
     }
 }
 
-fetchRandomMeal()
+fetchRandomMeal();
 
-var resultsDiv = document.getElementById("search_results")
+var resultsDiv = document.getElementById("search_results");
 
 async function fetchData() {
     try {
-        var category = document.getElementById("category").value
-        var res = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`)
-        var foods = res.data.meals
-        console.log(foods)
-        resultsDiv.style.height = "400px"
+        var category = document.getElementById("category").value;
+        var res = await axios.get(`https://www.themealdb.com/api/json/v1/1/filter.php?c=${category}`);
+        var foods = res.data.meals;
+        console.log(foods);
+        resultsDiv.style.height = "400px";
 
-        resultsDiv.innerHTML = ""
+        resultsDiv.innerHTML = "";
         for (let i = 0; i < foods.length; i++) {
-            let searchDiv = document.createElement("div")
-            searchDiv.className = "item"
-            let foodImage = document.createElement("img")
-            foodImage.className = "foodImage"
-            foodImage.src = `${foods[i].strMealThumb}`
-            let foodName = document.createElement("p")
-            foodName.textContent = `${foods[i].strMeal}`
-            foodName.className = "foodName"
-            let details = document.createElement("button")
-            details.textContent = "ADD-INS"
-            details.className = "butn"
-            searchDiv.appendChild(foodImage)
-            searchDiv.appendChild(foodName)
-            searchDiv.appendChild(details)
-            resultsDiv.appendChild(searchDiv)
+            let searchDiv = document.createElement("div");
+            searchDiv.classList.add("show");
+            searchDiv.className = "item";
+            let foodImage = document.createElement("img");
+            foodImage.className = "foodImage";
+            foodImage.src = `${foods[i].strMealThumb}`;
+            let foodName = document.createElement("p");
+            foodName.textContent = `${foods[i].strMeal}`;
+            foodName.className = "foodName";
+            let details = document.createElement("button");
+            details.textContent = "ADD-INS";
+            details.className = "butn";
+            searchDiv.appendChild(foodImage);
+            searchDiv.appendChild(foodName);
+            searchDiv.appendChild(details);
+            resultsDiv.appendChild(searchDiv);
         }
-        var comment = document.getElementById("line2")
-        comment.style.visibility = "visible"
+
+        var comment = document.getElementById("line2");
+        comment.style.visibility = "visible";
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
-var search = document.getElementById("search_icon")
-search.addEventListener("click", fetchData)
+var search = document.getElementById("search_icon");
+search.addEventListener("click", fetchData);
 
-var btn = document.getElementById("btn")
+var btn = document.getElementById("btn");
 btn.addEventListener("click", function () {
-    // Define the functionality you want when the button is clicked
-    console.log("Button clicked!");
+    // Check if there is valid data before opening the modal
+    if (data) {
+        openModal();
+    } else {
+        console.log("No data available.");
+    }
 });
 
 var resultsDiv = document.getElementById("search_results");
@@ -82,8 +95,6 @@ document.addEventListener("mousemove", function (event) {
 document.addEventListener("mouseup", function () {
     isDragging = false;
 });
-
-// Your existing code
 
 var icon = document.getElementById("btn");
 icon.addEventListener("click", openModal);
@@ -119,3 +130,18 @@ function loadIngredients() {
         }
     }
 }
+document.addEventListener("DOMContentLoaded", function() {
+    var section1 = document.getElementById("sec");
+    section1.classList.add("show");
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Assuming you want to add the "show" class to the search results
+    var searchDiv = document.getElementById("search_results");
+    searchDiv.classList.add("show");
+    
+    // ...
+
+    // Add this line at the end of your fetchData function
+    searchDiv.classList.add("show");
+});

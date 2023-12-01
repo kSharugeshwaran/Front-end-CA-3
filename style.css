@@ -16,6 +16,7 @@ body {
     background-attachment: fixed;
     margin: 0;
     font-family: 'Bayon', sans-serif;
+    scroll-behavior:smooth;
 }
 
 nav {
@@ -28,6 +29,10 @@ nav {
     z-index: 100;
     color: white;
     font-size: 18px;
+}
+a{
+    text-decoration: none;
+    color: white;
 }
 
 .part1, .part2 {
@@ -44,13 +49,23 @@ nav p:hover {
     transform: scale3d(1.1, 1.1, 1.1);
 }
 
-.section1 {
+#sec {
     font-size: 60px;
     color: rgb(207, 199, 199);
     margin-left: 550px;
     width: 600px;
     margin-top: 150px;
     text-shadow: 10px 10px 8px rgba(255, 255, 255, 0.2);
+}
+#sec{
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 2s ease, transform 2s ease;
+}
+
+#sec.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 #search_icon {
@@ -106,6 +121,18 @@ input::placeholder {
     justify-content: center;
     align-items: center;
 }
+#container {
+    /* Initial styles */
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+#container.show {
+    /* Animation styles when the "show" class is added */
+    opacity: 1;
+    transform: translateY(0);
+}
 
 #kfc {
     width: 160px;
@@ -119,7 +146,7 @@ input::placeholder {
     color: rgb(124, 0, 0);
     top: -70px;
     font-family: "copse";
-    font-size: 30px;
+    font-size: 25px;
     text-align: center;
 }
 
@@ -143,7 +170,7 @@ input::placeholder {
     color: white;
     font-family: "copse";
     position: absolute;
-    top: -150px;
+    top: -200px;
     left: 100px;
     font-size: 35px;
 }
@@ -247,6 +274,15 @@ footer {
     -webkit-backdrop-filter: blur(10.5px);
     border: 1px solid rgba(255, 255, 255, 0.18);
 }
+/* .item {
+    opacity: 0;
+    transition: opacity 1s ease;
+    display: block;
+}
+
+.item.show {
+    opacity: 1;
+} */
 
 .foodImage {
     width: 150px;
@@ -259,6 +295,7 @@ footer {
     display: flex;
     flex-direction: row;
     overflow: auto;
+    scroll-behavior: smooth;
     top: 400px;
     position: relative;
     margin-bottom: 300px;
@@ -332,7 +369,7 @@ span:hover {
 }
 
 .modal {
-    display: none;
+    align-items: center;
     position: fixed;
     z-index: 1;
     left: 0;
@@ -341,6 +378,7 @@ span:hover {
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.5);
+    display: none;
 }
 
 .modal-content {
@@ -361,6 +399,21 @@ span:hover {
     left: 33%;
     top: -10vh;
 }
+
+
+.modal-content {
+    animation: scaleIn 1s ease-in-out;
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
 
 .close {
     color: #ffffff;

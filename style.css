@@ -383,7 +383,7 @@ span:hover {
 }
 
 /* Media query for iPhone 13 Pro Max */
-@media only screen and (max-width: 435px) {
+@media only screen and (max-width: 500px) {
     body {
         background-image: url("./assets/phone.jpeg");
         background-repeat: no-repeat;
@@ -493,6 +493,7 @@ span:hover {
         top: 150px;
         left: 20px;
         width: 250px;
+        font-size: 20px;
     }
 
     .modal-content {

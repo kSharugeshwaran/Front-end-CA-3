@@ -1,6 +1,6 @@
 
 var url = "https://www.themealdb.com/api/json/v1/1/random.php";
-var data; // Define data variable outside the functions
+var data; 
 
 
 
@@ -11,7 +11,6 @@ async function fetchRandomMeal() {
         console.log(data);
         var container = document.getElementById("container");
 
-        // Add "show" class to trigger the animation
         container.classList.add("show");
         var randomImage = document.getElementById("kfc");
         randomImage.src = `${data.strMealThumb}`;
@@ -66,7 +65,6 @@ search.addEventListener("click", fetchData);
 
 var btn = document.getElementById("btn");
 btn.addEventListener("click", function () {
-    // Check if there is valid data before opening the modal
     if (data) {
         openModal();
     } else {
@@ -136,12 +134,8 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 document.addEventListener("DOMContentLoaded", function() {
-    // Assuming you want to add the "show" class to the search results
     var searchDiv = document.getElementById("search_results");
     searchDiv.classList.add("show");
     
-    // ...
-
-    // Add this line at the end of your fetchData function
     searchDiv.classList.add("show");
 });
